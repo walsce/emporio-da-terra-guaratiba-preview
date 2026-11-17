@@ -88,3 +88,17 @@ html,body{max-width:100%;overflow-x:clip}
  .homepage-gallery button:nth-child(2){grid-row:span 2}
  .homepage-gallery button:nth-child(3){display:block}
 }
+
+/* Containment and readable column typography at laptop and zoomed widths. */
+.experience{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.experience>*{min-width:0}
+.experience .content h2{font-size:clamp(43px,4.55vw,72px);overflow-wrap:normal}
+.experience .content{min-width:0}
+@media(max-width:1020px){
+ .experience{grid-template-columns:minmax(0,1fr)}
+ .experience .content{order:1}
+ .experience .restaurant-editorial{order:2;width:100%;max-width:740px;height:470px;min-height:0}
+}
+@media(max-width:600px){
+ .experience .restaurant-editorial{height:360px}
+}
